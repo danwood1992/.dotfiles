@@ -1,0 +1,10 @@
+alias rd="$REALMDESK_DIR/tools/development.sh"
+alias rdhelp="$REALMDESK_DIR/tools/development.sh help"
+alias rdbuild="$REALMDESK_DIR/tools/development.sh build"
+alias rdstart="$REALMDESK_DIR/tools/development.sh start"
+alias rdcode="cd $REALMDESK_DIR && code"
+alias rdbackbash="docker exec -it realmdesk-realmdesk-backend-1 /bin/bash"
+alias rdfrontbash="docker exec -it realmdesk-frontend-app-1 /bin/bash"
+
+alias letsgo="rdcode && rdbuild && rdstart"
+alias letsstop="rdcode && rdbuild && dcd"

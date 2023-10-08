@@ -2,7 +2,7 @@
 
 DOTFILES_DIR="$HOME/.dotfiles"
 
-declare -a dotfiles=(".zshrc" ".vimrc" ".gitconfig" ".gitignore_global")
+declare -a dotfiles=(".zshrc" ".vimrc" ".gitconfig" ".gitignore_global" ".realmdesk")
 
 backup_existing() {
   for file in "${dotfiles[@]}"; do

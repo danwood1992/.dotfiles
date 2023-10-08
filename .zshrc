@@ -32,24 +32,31 @@ else
   export EDITOR='mvim'
 fi
 
-alias realmdev="$REALMDESK_DIR/tools/development.sh"
-alias rdbuild="$REALMDESK_DIR/tools/development.sh build"
-alias rdstart="$REALMDESK_DIR/tools/development.sh start"
+
+source .realmdesk
+
+alias c="clear"
+alias l="ls -lah"
+alias code="code ."
+
+
 alias zshconfig="vim ~/.zshrc"
 alias srczsh="source ~/.zshrc"
+
 alias v="vim"
 alias g="git"
+
 alias d="docker"
+alias dp="docker ps"
 alias dc="docker compose"
 alias dcb="docker compose build"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
-alias c="clear"
-alias l="ls -lah"
-alias code="code ."
-alias rd="cd $REALMDESK_DIR && code"
-alias letsgo="rd && rdbuild && rdstart"
-alias letsstop="rd && rdbuild && dcd"
+
 alias aliases="cat ~/.zshrc | grep 'alias' "
 
 alias mync='nc -v -n'
+
+
+
+
