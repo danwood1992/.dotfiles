@@ -1,10 +1,26 @@
+
+alias clonerealmdesk="cd ~ git clone git@github.com:realmdesk/realmdesk.git"
+
 alias rd="$REALMDESK_DIR/tools/development.sh"
 alias rdhelp="$REALMDESK_DIR/tools/development.sh help"
 alias rdbuild="$REALMDESK_DIR/tools/development.sh build"
 alias rdstart="$REALMDESK_DIR/tools/development.sh start"
 alias rdcode="cd $REALMDESK_DIR && code"
-alias rdbackbash="docker exec -it realmdesk-realmdesk-backend-1 /bin/bash"
-alias rdfrontbash="docker exec -it realmdesk-frontend-app-1 /bin/bash"
 
+alias rdbackbash="docker exec -it realmdesk-realmdesk-backend-1 /bin/bash"
+
+alias rdbackrestart="docker restart realmdesk-realmdesk-backend-1"
+alias rdfrontrestart="docker restart realmdesk-frontend-app-1"
+
+alias rdbackmanage="rdbackbash manage.py"
+alias rdsuperman="rdbackbash manage.py createsuperuser"
+alias rdbackmigrate="rdbackbash manage.py migrate"
+alias rdbackmakemigrations="rdbackbash manage.py makemigrations"
+alias rdbackshell="rdbackbash manage.py shell"
+alias rdbacktest="rdbackbash manage.py test"
+
+alias rdfrontbash="docker exec -it realmdesk-frontend-app-1 /bin/bash"
+alias rdbacklog="docker logs -f realmdesk-realmdesk-backend-1"
+alias rdfrontlog="docker logs -f realmdesk-frontend-app-1"
 alias letsgo="rdcode && rdbuild && rdstart"
 alias letsstop="rdcode && rdbuild && dcd"
