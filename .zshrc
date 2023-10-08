@@ -35,10 +35,8 @@ fi
 alias realmdev="$REALMDESK_DIR/tools/development.sh"
 alias rdbuild="$REALMDESK_DIR/tools/development.sh build"
 alias rdstart="$REALMDESK_DIR/tools/development.sh start"
-
 alias zshconfig="vim ~/.zshrc"
-alias sourcezsh="source ~/.zshrc"
-
+alias srczsh="source ~/.zshrc"
 alias v="vim"
 alias g="git"
 alias d="docker"
@@ -50,8 +48,7 @@ alias c="clear"
 alias l="ls -lah"
 alias code="code ."
 alias rd="cd $REALMDESK_DIR && code"
-
 alias letsgo="rd && rdbuild && rdstart"
 alias letsstop="rd && rdbuild && dcd"
+alias aliases="cat ~/.zshrc | grep 'alias' "
 
-# alias rdstart="cd $REALMDESK_DIR && tools/development.sh start"
