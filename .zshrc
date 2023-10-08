@@ -3,7 +3,6 @@
 REALMDESK_DIR=~/imperisoft/realmdesk
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="robbyrussell"
 
 zstyle ':omz:update' mode auto
@@ -33,7 +32,7 @@ else
 fi
 
 
-source .realmdesk
+source $HOME/.realmdesk
 
 alias c="clear"
 alias l="ls -lah"

@@ -1,26 +1,32 @@
+# RealmDesk Development Workflow Aliases
 
-alias clonerealmdesk="cd ~ git clone git@github.com:realmdesk/realmdesk.git"
+# Clone the RealmDesk repository
+alias clonerealmdesk="cd ~ && git clone git@github.com:realmdesk/realmdesk.git"
 
+# Development commands
 alias rd="$REALMDESK_DIR/tools/development.sh"
-alias rdhelp="$REALMDESK_DIR/tools/development.sh help"
-alias rdbuild="$REALMDESK_DIR/tools/development.sh build"
-alias rdstart="$REALMDESK_DIR/tools/development.sh start"
+alias rdhelp="$rd help"
+alias rdbuild="$rd build"
+alias rdstart="$rd start"
 alias rdcode="cd $REALMDESK_DIR && code"
 
+# Backend container aliases
 alias rdbackbash="docker exec -it realmdesk-realmdesk-backend-1 /bin/bash"
-
 alias rdbackrestart="docker restart realmdesk-realmdesk-backend-1"
-alias rdfrontrestart="docker restart realmdesk-frontend-app-1"
+alias rdbackmanage="docker exec -it realmdesk-realmdesk-backend-1 python3 manage.py"
+alias rdsuperman="rdbackmanage createsuperuser"
 
-alias rdbackmanage="rdbackbash manage.py"
-alias rdsuperman="rdbackbash manage.py createsuperuser"
-alias rdbackmigrate="rdbackbash manage.py migrate"
-alias rdbackmakemigrations="rdbackbash manage.py makemigrations"
-alias rdbackshell="rdbackbash manage.py shell"
-alias rdbacktest="rdbackbash manage.py test"
-
-alias rdfrontbash="docker exec -it realmdesk-frontend-app-1 /bin/bash"
+alias rdbackmigrate="rdbackmanage migrate"
+alias rdbackmakemigrations="rdbackmanage makemigrations"
+alias rdbackshell="rdbackmanage shell"
+alias rdbacktest="rdbackmanage test"
 alias rdbacklog="docker logs -f realmdesk-realmdesk-backend-1"
+
+# Frontend container aliases
+alias rdfrontbash="docker exec -it realmdesk-frontend-app-1 /bin/bash"
+alias rdfrontrestart="docker restart realmdesk-frontend-app-1"
 alias rdfrontlog="docker logs -f realmdesk-frontend-app-1"
+
+# Start and stop development environment
 alias letsgo="rdcode && rdbuild && rdstart"
 alias letsstop="rdcode && rdbuild && dcd"
