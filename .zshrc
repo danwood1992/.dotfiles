@@ -52,3 +52,4 @@ alias letsgo="rd && rdbuild && rdstart"
 alias letsstop="rd && rdbuild && dcd"
 alias aliases="cat ~/.zshrc | grep 'alias' "
 
+alias mync='nc -v -n'
