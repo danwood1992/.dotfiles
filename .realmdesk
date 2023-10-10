@@ -1,12 +1,14 @@
 # RealmDesk Development Workflow Aliases
-
+REALMDESK_DIR=~/imperisoft/realmdesk
 # Clone the RealmDesk repository
 alias clonerealmdesk="cd ~ && git clone git@github.com:realmdesk/realmdesk.git"
 
 # Development commands
 alias rd="$REALMDESK_DIR/tools/development.sh"
 alias rdhelp="$rd help"
-alias rdbuild="$rd build"
+
+
+alias rdbuild="$REALMDESK_DIR/tools/development.sh build_env"
 alias rdstart="$rd start"
 alias rdcode="cd $REALMDESK_DIR && code"
 
@@ -28,5 +30,5 @@ alias rdfrontrestart="docker restart realmdesk-frontend-app-1"
 alias rdfrontlog="docker logs -f realmdesk-frontend-app-1"
 
 # Start and stop development environment
-alias letsgo="rdcode && rdbuild && rdstart"
-alias letsstop="rdcode && rdbuild && dcd"
+alias letsgo="rdcode && $REALMDESK_DIR/tools/development.sh build_env && rdstart"
+alias letsstop="cd $REALMDESK_DIR && dcd"

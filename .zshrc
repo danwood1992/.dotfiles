@@ -14,16 +14,16 @@ DISABLE_MAGIC_FUNCTIONS="true"
 
 # DISABLE_AUTO_TITLE="true"
 
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
-plugins=(git aliases git-commit )
+plugins=(git aliases git-commit)
 
 source $ZSH/oh-my-zsh.sh
-
+source $HOME/.realmdesk
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -31,8 +31,6 @@ else
   export EDITOR='mvim'
 fi
 
-
-source $HOME/.realmdesk
 
 alias c="clear"
 alias l="ls -lah"
@@ -55,7 +53,5 @@ alias dcd="docker compose down"
 alias aliases="cat ~/.zshrc | grep 'alias' "
 
 alias mync='nc -v -n'
-
-
 
 

@@ -1,11 +1,8 @@
 
 *.pyc
 
-*.js
-*.min.js
 
-*.css
-*.min.css
+
 
 node_modules/
 
