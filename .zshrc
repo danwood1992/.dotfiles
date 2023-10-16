@@ -24,6 +24,7 @@ plugins=(git aliases git-commit)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.realmdesk
+source $HOME/.docker_aliases
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -31,24 +32,15 @@ else
   export EDITOR='mvim'
 fi
 
-
 alias c="clear"
 alias l="ls -lah"
 alias code="code ."
-
 
 alias zshconfig="vim ~/.zshrc"
 alias srczsh="source ~/.zshrc"
 
 alias v="vim"
 alias g="git"
-
-alias d="docker"
-alias dp="docker ps"
-alias dc="docker compose"
-alias dcb="docker compose build"
-alias dcub="docker compose up --build"
-alias dcd="docker compose down"
 
 alias aliases="cat ~/.zshrc | grep 'alias' "
 

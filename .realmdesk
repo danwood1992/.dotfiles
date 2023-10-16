@@ -1,34 +1,43 @@
 # RealmDesk Development Workflow Aliases
 REALMDESK_DIR=~/imperisoft/realmdesk
+
 # Clone the RealmDesk repository
-alias clonerealmdesk="cd ~ && git clone git@github.com:realmdesk/realmdesk.git"
+alias rdclone="cd ~ && git clone git@github.com:realmdesk/realmdesk.git"
 
 # Development commands
 alias rd="$REALMDESK_DIR/tools/development.sh"
 alias rdhelp="$rd help"
-
-
-alias rdbuild="$REALMDESK_DIR/tools/development.sh build_env"
+alias rdalias="cat ~/.realmdesk"
+alias rdbuild="$rd build_env"
 alias rdstart="$rd start"
 alias rdcode="cd $REALMDESK_DIR && code"
 
-# Backend container aliases
+# Docker container aliases
+# Redis
+alias rdredisbash="docker exec -it realmdesk-redis-1 /bin/bash"
+alias rdredisrestart="docker restart realmdesk-redis-1"
+alias rdredislog="docker logs -f realmdesk-redis-1"
+# Redis Session
+alias rdredsesbash="docker exec -it realmdesk-realmdesk-redis-session-store-1 /bin/bash"
+alias rdredsesrestart="docker restart realmdesk-realmdesk-redis-session-store-1"
+alias rdredseslog="docker logs -f realmdesk-realmdesk-redis-session-store-1"
+# Backend
 alias rdbackbash="docker exec -it realmdesk-realmdesk-backend-1 /bin/bash"
 alias rdbackrestart="docker restart realmdesk-realmdesk-backend-1"
 alias rdbackmanage="docker exec -it realmdesk-realmdesk-backend-1 python3 manage.py"
 alias rdsuperman="rdbackmanage createsuperuser"
-
 alias rdbackmigrate="rdbackmanage migrate"
 alias rdbackmakemigrations="rdbackmanage makemigrations"
 alias rdbackshell="rdbackmanage shell"
 alias rdbacktest="rdbackmanage test"
 alias rdbacklog="docker logs -f realmdesk-realmdesk-backend-1"
 
-# Frontend container aliases
+# Frontend
 alias rdfrontbash="docker exec -it realmdesk-frontend-app-1 /bin/bash"
 alias rdfrontrestart="docker restart realmdesk-frontend-app-1"
 alias rdfrontlog="docker logs -f realmdesk-frontend-app-1"
 
 # Start and stop development environment
-alias letsgo="rdcode && $REALMDESK_DIR/tools/development.sh build_env && rdstart"
-alias letsstop="cd $REALMDESK_DIR && dcd"
+alias rdletsgo="rdcode && rdbuild && rdstart"
+alias rdletsstop="cd $REALMDESK_DIR && dcd"
+

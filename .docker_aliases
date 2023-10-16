@@ -1,0 +1,12 @@
+# docker aliases
+
+alias d="docker"
+alias dp="docker ps"
+alias dc="docker compose"
+alias dcb="docker compose build"
+alias dcub="docker compose up --build"
+alias dcd="docker compose down"
+alias rmdv="docker volume rm $(docker volume ls -q)"
+alias rmdvd="docker volume rm $(docker volume ls -qf dangling=true)"
+alias dsp="docker system prune --all --volumes"
+alias dockeralias="cat ~/.docker_aliases"
