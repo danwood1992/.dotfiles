@@ -10,6 +10,7 @@ alias rdhelp="$rd help"
 alias rdalias="cat ~/.realmdesk"
 alias rdbuild="$rd build_env"
 alias rdstart="$rd start"
+alias rdtest="$rd run_tests"
 alias rdcode="cd $REALMDESK_DIR && code"
 
 # Docker container aliases

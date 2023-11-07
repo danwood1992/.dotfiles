@@ -35,12 +35,15 @@ fi
 alias c="clear"
 alias l="ls -lah"
 alias code="code ."
-
+alias co="code ."
+alias cl="clear"
 alias zshconfig="vim ~/.zshrc"
 alias srczsh="source ~/.zshrc"
-
+alias dockerr="docker"
+alias dokcer="docker"
 alias v="vim"
 alias g="git"
+alias m="make"
 
 alias aliases="cat ~/.zshrc | grep 'alias' "
 
