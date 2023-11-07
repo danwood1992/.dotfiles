@@ -44,7 +44,9 @@ alias dokcer="docker"
 alias v="vim"
 alias g="git"
 alias m="make"
-
+alias stopcont="docker stop $(docker ps -a -q)"
+alias rmcont="docker rm $(docker ps -a -q)"
+alias rmdockvol="docker volume rm $(docker volume ls -q)"
 alias aliases="cat ~/.zshrc | grep 'alias' "
 
 alias mync='nc -v -n'
